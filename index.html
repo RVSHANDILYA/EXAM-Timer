@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Countdown Timers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      text-align: center;
+      padding: 1rem;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+    .timer {
+      background: #007acc;
+      color: white;
+      margin: 1rem auto;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .timer-content {
+      text-align: left;
+      flex: 1 1 60%;
+    }
+    .timer-box {
+      background: white;
+      color: red;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      flex: 1 1 30%;
+      margin-top: 0.5rem;
+    }
+    .subject {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .date {
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    .motivation {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #007acc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 1 Semester Exam Countdown</h1>
+
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">CITS1402 Relational Database Management Systems</div>
+      <div class="date">📅 Saturday 31 May 2025 | 🕑 2:00 PM</div>
+    </div>
+    <div class="timer-box" id="timer1"></div>
+  </div>
+
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">CITS1401 Computational Thinking with Python</div>
+      <div class="date">📅 Tuesday 03 Jun 2025 | 🕑 2:00 PM</div>
+    </div>
+    <div class="timer-box" id="timer2"></div>
+  </div>
+
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">CITS4407 Open Source Tools and Scripting</div>
+      <div class="date">📅 Friday 06 Jun 2025 | 🕑 2:00 PM</div>
+    </div>
+    <div class="timer-box" id="timer3"></div>
+  </div>
+
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">STAT2401 Analysis of Experiments</div>
+      <div class="date">📅 Monday 09 Jun 2025 | 🕘 9:00 AM</div>
+    </div>
+    <div class="timer-box" id="timer4"></div>
+  </div>
+
+  <div class="motivation">💪 Stay focused, work hard, and believe in yourself — success is coming!</div>
+
+  <script>
+    function startCountdown(id, examDate) {
+      const timerElement = document.getElementById(id);
+      const countDownDate = new Date(examDate).getTime();
+
+      const updateTimer = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        if (distance < 0) {
+          clearInterval(updateTimer);
+          timerElement.innerHTML = "📚 Exam Started or Passed!";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    }
+
+    // Start countdowns
+    startCountdown("timer1", "May 31, 2025 14:00:00");
+    startCountdown("timer2", "June 3, 2025 14:00:00");
+    startCountdown("timer3", "June 6, 2025 14:00:00");
+    startCountdown("timer4", "June 9, 2025 09:00:00");
+  </script>
+</body>
+</html>
