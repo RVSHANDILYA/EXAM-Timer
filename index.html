@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Countdown Timers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      text-align: center;
+      padding: 1rem;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+    .timer {
+      background: #007acc;
+      color: white;
+      margin: 1rem auto;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .timer-content {
+      text-align: left;
+      flex: 1 1 60%;
+    }
+    .timer-box {
+      background: white;
+      color: red;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      flex: 1 1 30%;
+      margin-top: 0.5rem;
+    }
+    .subject {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .date {
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    .motivation {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #007acc;
+      font-weight: bold;
+    }
+    details {
+      max-width: 600px;
+      margin: 1rem auto;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #007acc;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 1 Semester Exam Countdown</h1>
+
+  <!-- Timer Blocks -->
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">CITS1402 Relational Database Management Systems</div>
+      <div class="date">📅 Saturday 31 May 2025 | 🕑 2:00 PM</div>
+    </div>
+    <div class="timer-box" id="timer1"></div>
+  </div>
+  <details>
+    <summary>📚 View Curriculum - CITS1402</summary>
+    <ul>
+      <li>Week 1: Introduction to Relational Model</li>
+      <li>Week 2: Relational Algebra + SQL</li>
+      <li>Week 3: ER Diagrams + SQL</li>
+      <li>Week 4: Project Description</li>
+      <li>Week 5: Subqueries + SQL</li>
+      <li>Week 6: SQL Practice</li>
+      <li>Week 7: Logical Modeling</li>
+      <li>Week 8: Normalization + Functional Dependencies</li>
+      <li>Week 9: Normalization II</li>
+      <li>Week 10: Transactions + Views</li>
+      <li>Week 11: Indexes + SQL</li>
+      <li>Week 12: Revision</li>
+      <li style="color: red;"> Emphasize integrating theoretical concepts with practical questions.</li>
+    </ul>
+  </details>
+
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">CITS1401 Computational Thinking with Python</div>
+      <div class="date">📅 Tuesday 03 Jun 2025 | 🕑 2:00 PM</div>
+    </div>
+    <div class="timer-box" id="timer2"></div>
+  </div>
+  <details>
+    <summary>📚 View Curriculum - CITS1401</summary>
+    <ul>
+      <li>Week 1: Introduction to Computational Thinking</li>
+      <li>Week 2: Python Basics</li>
+      <li>Week 3: Decisions & Loops</li>
+      <li>Week 4: Functions & Strings</li>
+      <li>Week 5: Lists & File Handling</li>
+      <li>Week 6: Nested Loops</li>
+      <li>Week 7: Exception Handling</li>
+      <li>Week 8: Dictionaries</li>
+      <li>Week 9: Simulation & Design</li>
+      <li>Week 10: Objects & Classes</li>
+      <li>Week 11: Recursion</li>
+      <li>Week 12: Final Exam Review</li>
+      <li style="color: red;">Focus on Problem Solving </li>
+    </ul>
+  </details>
+
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">CITS4407 Open Source Tools and Scripting</div>
+      <div class="date">📅 Friday 06 Jun 2025 | 🕑 2:00 PM</div>
+    </div>
+    <div class="timer-box" id="timer3"></div>
+  </div>
+  <details>
+    <summary>📚 View Curriculum - CITS4407</summary>
+    <ul>
+      <li>L0: Introduction & Demo</li>
+      <li>L1: Open Source Tools & Shell Programming</li>
+      <li>L2: Virtualization & Docker</li>
+      <li>L3: Files and Directories</li>
+      <li>L4: Processes</li>
+      <li>L5: Conditionals & Exit Status</li>
+      <li>L6: Variables & Literate Programming</li>
+      <li>L7: Globbing, Case & For Loops</li>
+      <li>L8: While & Shift</li>
+      <li>L9: ShellCheck & Alternatives</li>
+      <li>L10: Regular Expressions</li>
+      <li>L11: Sed - Stream Editor</li>
+      <li>L12: Git & Version Control</li>
+      <li>L13: Awk - Basics</li>
+      <li style="color: red;"> Look at previous question papers</li>
+    </ul>
+  </details>
+
+  <div class="timer">
+    <div class="timer-content">
+      <div class="subject">STAT2401 Analysis of Experiments</div>
+      <div class="date">📅 Monday 09 Jun 2025 | 🕘 9:00 AM</div>
+    </div>
+    <div class="timer-box" id="timer4"></div>
+  </div>
+  <details>
+    <summary>📚 View Curriculum - STAT2401</summary>
+    <ul>
+      <li>L0: Introduction and Review Part 1</li>
+      <li>L1: Review Part 2</li>
+      <li>L2: Correlation and Introduction to Linear Models- SLR and MLR</li>
+      <li>L3: Simple Linear Regression (SLR) Part 1</li>
+      <li>L4: Simple Linear Regression (SLR) Part 2</li>
+      <li>L5: Simple Linear Regression (SLR) Part 3</li>
+      <li>L6: Introduction to Multiple Linear Regression (MLR) </li>
+      <li>L7: Multiple Linear Regression (MLR) Part 1</li>
+      <li>L8: Multiple Linear Regression (MLR) Part 2</li>
+      <li>L9: Multiple Linear Regression (MLR) Part 3</li>
+      <li>L10: Analysis of Covariance (ANCOVA)</li>
+      <li>L11: Potential Problems and Revision</li>
+      <li style="color: red;">Focus more on Labs </li>
+      
+    </ul>
+  </details>
+
+  <div class="motivation">💪 Stay focused, work hard, and believe in yourself — success is coming!</div>
+
+  <script>
+    function startCountdown(id, examDate) {
+      const timerElement = document.getElementById(id);
+      const countDownDate = new Date(examDate).getTime();
+
+      const updateTimer = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        if (distance < 0) {
+          clearInterval(updateTimer);
+          timerElement.innerHTML = "📚 Exam Started or Passed!";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    }
+
+    // Start countdowns
+    startCountdown("timer1", "May 31, 2025 14:00:00");
+    startCountdown("timer2", "June 3, 2025 14:00:00");
+    startCountdown("timer3", "June 6, 2025 14:00:00");
+    startCountdown("timer4", "June 9, 2025 09:00:00");
+  </script>
+</body>
+</html>
